@@ -223,6 +223,21 @@ $("#task-form-modal .btn-primary").click(function() {
     saveTasks();
   }
 });
+//drag-drop trash item function
+$("#trash").droppable({
+  accept: ".card .list-group-item",
+  tolerance: "touch",
+  drop: function(event, ui) {
+    console.log("drop");
+    ui.draggable.remove();
+  },
+  over: function(event, ui) {
+    console.log("over");
+  },
+  out: function(event, ui) {
+    console.log("out");
+  }
+});
 
 // remove all tasks
 $("#remove-tasks").on("click", function() {
